@@ -15,5 +15,7 @@ namespace AuthService.Application.Repositories
         Task<User> GetUserWithRolesAsync(int userId);
         Task<List<User>> GetAllUserWithRolesAsync();
         Task<bool> UserExistsAsync(string email);
+        Task<List<int>> GetRoleIdByNameAsync(List<string> rolenames);
+        Task<User> AddUserAsync(User user);
     }
 }

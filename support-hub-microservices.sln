@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36518.9 d17.14
+VisualStudioVersion = 17.14.36518.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateway", "ApiGateway", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ResponseService", "Response
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NotificationService", "NotificationService", "{60D45453-2569-4864-A23C-4DD617489D19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ocelot", "ApiGateway\Ocelot\Ocelot.csproj", "{41D53B1C-D13E-476B-A95A-A3830C534435}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OcelotApiGateway", "ApiGateway\Ocelot\OcelotApiGateway.csproj", "{41D53B1C-D13E-476B-A95A-A3830C534435}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthService.Api", "AuthService\AuthService.Api\AuthService.Api.csproj", "{078F0991-3236-4CCD-98BC-E2424BA48915}"
 EndProject

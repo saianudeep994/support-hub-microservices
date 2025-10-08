@@ -1,6 +1,10 @@
-﻿using AuthService.Application.Services.Abstrations;
+﻿using AuthService.Application.DTOs;
+using AuthService.Application.Services.Abstrations;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Identity.Client;
+using System;
 
 namespace AuthService.Api.Controllers
 {
@@ -40,6 +44,36 @@ namespace AuthService.Api.Controllers
                 return Ok(user);
             }
             return NotFound("User not found.");
+        }
+
+        [HttpPost("signup")]
+        public IActionResult Register([FromBody] SignUpDTO signUpDTO)
+        {
+            var user = _userservice.RegisterUser(signUpDTO);
+            if (user != null)
+            {
+                return Ok(user);
+            }
+            return BadRequest("User registration failed.");
+        }
+        [HttpGet("getuserbyid")]
+        public IActionResult GetUserById(int id) 
+        {
+            return Ok("Anudeep");
+        }
+        [HttpGet("getuserbyids")]
+        public IActionResult GetUsersByIds([FromQuery] int[] ids)
+        {
+            GetNameDTO p1 = new();
+            List<GetNameDTO> people = [
+                    new GetNameDTO
+                    { Id = 1, Name = "Ada" },
+                    new GetNameDTO
+                    { Id = 2, Name = "Anudeep" }
+                ];
+
+
+            return Ok(people);
         }
     }
 }

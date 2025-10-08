@@ -16,10 +16,6 @@ namespace AuthService.Infrastructure.Models
         public AuthDbContext(DbContextOptions<AuthDbContext> options) : base(options)
         { 
         }
-        //public AuthDbContext(IConfiguration configuration)
-        //{
-        //    _configuration = configuration;
-        //}
         public virtual DbSet<User> users { get; set; }
         public virtual DbSet<Role> roles { get; set; }
         public virtual DbSet<UserRole> userRoles { get; set; }
@@ -71,7 +67,7 @@ namespace AuthService.Infrastructure.Models
                     UserId = 3,
                     UserName = "customer",
                     Email = "customer@supporthub.com",
-                    PasswordHash = "$2b$10$MfKOL5BAldw0QORTaipoaeS0ZpHrUbfxqsGYMznVIL7IW0mLvBW3y", //customer123
+                    PasswordHash = "$2b$10$MfKOL5BAldw0QORTaipoaeS0ZpHrUbfxqsGYMznVIL7IW0mLvBW3y", //cust123
                     CreatedAt = staticCreatedDate
                 }
             );

@@ -13,6 +13,8 @@ using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
 
 namespace AuthService.Infrastructure
 {
@@ -28,7 +30,9 @@ namespace AuthService.Infrastructure
             // Add other infrastructure services as needed
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserService , UserService>();
-            services.AddAutoMapper(cfg => cfg.AddProfile<UserMapper>());
+            //services.AddAutoMapper(cfg => cfg.AddProfile<UserMapper>());
+            //services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddAutoMapper(typeof(UserMapper).Assembly);
         }
     }
 }

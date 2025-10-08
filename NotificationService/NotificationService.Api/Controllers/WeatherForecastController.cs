@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace NotificationService.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/notifications/[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]

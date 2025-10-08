@@ -13,5 +13,7 @@ namespace AuthService.Application.Services.Abstrations
         UserDTO LoginUser(LoginDTO loginDTO);
         IEnumerable<UserDTO> GetAllUsers();
         UserDTO GetUserByEmail(string email);
+
+        UserDTO RegisterUser(SignUpDTO signUpDTO);
     }
 }

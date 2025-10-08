@@ -1,3 +1,82 @@
 {
-
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:5000"
+  },
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/gateway/auth/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "DownstreamPathTemplate": "/api/auth/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Period": "10s",
+        "Limit": 3,
+        "PeriodTimespan": 10
+      },
+      "FileCacheOptions": {
+        "TtlSeconds": 30
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/tickets/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "DownstreamPathTemplate": "/api/tickets/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5002
+        }
+      ],
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Period": "10s",
+        "Limit": 3,
+        "PeriodTimespan": 10
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/responses/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "DownstreamPathTemplate": "/api/responses/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5003
+        }
+      ],
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Period": "10s",
+        "Limit": 3,
+        "PeriodTimespan": 10
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/notifications/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "DownstreamPathTemplate": "/api/notifications/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5004
+        }
+      ],
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Period": "10s",
+        "Limit": 3,
+        "PeriodTimespan": 10
+      }
+    }
+  ]
 }
